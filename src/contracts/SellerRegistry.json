@@ -1,0 +1,64 @@
+[
+  {
+    "inputs": [
+      { "internalType": "string", "name": "_sellerCode", "type": "string" },
+      { "internalType": "string", "name": "_name", "type": "string" },
+      { "internalType": "string", "name": "_brand", "type": "string" },
+      { "internalType": "string", "name": "_phone", "type": "string" },
+      { "internalType": "string", "name": "_sellerAddress", "type": "string" }
+    ],
+    "name": "registerSeller",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "string", "name": "_sellerCode", "type": "string" }],
+    "name": "getSeller",
+    "outputs": [
+      {
+        "components": [
+          { "internalType": "string", "name": "sellerCode", "type": "string" },
+          { "internalType": "string", "name": "name", "type": "string" },
+          { "internalType": "string", "name": "brand", "type": "string" },
+          { "internalType": "string", "name": "phone", "type": "string" },
+          { "internalType": "string", "name": "sellerAddress", "type": "string" },
+          { "internalType": "address", "name": "registeredBy", "type": "address" },
+          { "internalType": "uint256", "name": "registeredAt", "type": "uint256" },
+          { "internalType": "bool", "name": "exists", "type": "bool" }
+        ],
+        "internalType": "struct SellerRegistry.Seller",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "string", "name": "_sellerCode", "type": "string" }],
+    "name": "sellerExists",
+    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "totalSellers",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": true, "internalType": "string", "name": "sellerCode", "type": "string" },
+      { "indexed": false, "internalType": "string", "name": "name", "type": "string" },
+      { "indexed": false, "internalType": "string", "name": "brand", "type": "string" },
+      { "indexed": true, "internalType": "address", "name": "registeredBy", "type": "address" },
+      { "indexed": false, "internalType": "uint256", "name": "registeredAt", "type": "uint256" }
+    ],
+    "name": "SellerRegistered",
+    "type": "event"
+  }
+]

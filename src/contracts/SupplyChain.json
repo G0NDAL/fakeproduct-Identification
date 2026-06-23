@@ -1,0 +1,130 @@
+[
+  {
+    "inputs": [
+      { "internalType": "address", "name": "_productRegistry", "type": "address" },
+      { "internalType": "address", "name": "_sellerRegistry", "type": "address" }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "inputs": [
+      { "internalType": "string", "name": "_serialNumber", "type": "string" },
+      { "internalType": "string", "name": "_sellerCode", "type": "string" }
+    ],
+    "name": "sellToSeller",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "string", "name": "_serialNumber", "type": "string" },
+      { "internalType": "string", "name": "_sellerCode", "type": "string" },
+      { "internalType": "uint8", "name": "_newStatus", "type": "uint8" },
+      { "internalType": "string", "name": "_location", "type": "string" },
+      { "internalType": "string", "name": "_notes", "type": "string" }
+    ],
+    "name": "updateSupplyChain",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "string", "name": "_serialNumber", "type": "string" },
+      { "internalType": "string", "name": "_consumerCode", "type": "string" }
+    ],
+    "name": "sellToConsumer",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "string", "name": "_serialNumber", "type": "string" }],
+    "name": "getProductState",
+    "outputs": [
+      {
+        "components": [
+          { "internalType": "uint8", "name": "currentStatus", "type": "uint8" },
+          { "internalType": "string", "name": "currentSellerCode", "type": "string" },
+          { "internalType": "string", "name": "consumerCode", "type": "string" },
+          { "internalType": "bool", "name": "exists", "type": "bool" }
+        ],
+        "internalType": "struct SupplyChain.ProductState",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "string", "name": "_serialNumber", "type": "string" }],
+    "name": "getProductHistory",
+    "outputs": [
+      {
+        "components": [
+          { "internalType": "uint8", "name": "status", "type": "uint8" },
+          { "internalType": "string", "name": "location", "type": "string" },
+          { "internalType": "string", "name": "notes", "type": "string" },
+          { "internalType": "string", "name": "actorCode", "type": "string" },
+          { "internalType": "address", "name": "actor", "type": "address" },
+          { "internalType": "uint256", "name": "timestamp", "type": "uint256" }
+        ],
+        "internalType": "struct SupplyChain.HistoryEvent[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "string", "name": "_serialNumber", "type": "string" },
+      { "internalType": "string", "name": "_consumerCode", "type": "string" }
+    ],
+    "name": "verifyProduct",
+    "outputs": [
+      { "internalType": "bool", "name": "isAuthentic", "type": "bool" },
+      { "internalType": "uint8", "name": "status", "type": "uint8" }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": true, "internalType": "string", "name": "serialNumber", "type": "string" },
+      { "indexed": true, "internalType": "string", "name": "sellerCode", "type": "string" },
+      { "indexed": false, "internalType": "address", "name": "actor", "type": "address" },
+      { "indexed": false, "internalType": "uint256", "name": "timestamp", "type": "uint256" }
+    ],
+    "name": "SoldToSeller",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": true, "internalType": "string", "name": "serialNumber", "type": "string" },
+      { "indexed": true, "internalType": "string", "name": "sellerCode", "type": "string" },
+      { "indexed": false, "internalType": "uint8", "name": "newStatus", "type": "uint8" },
+      { "indexed": false, "internalType": "string", "name": "location", "type": "string" },
+      { "indexed": false, "internalType": "uint256", "name": "timestamp", "type": "uint256" }
+    ],
+    "name": "SupplyChainUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": true, "internalType": "string", "name": "serialNumber", "type": "string" },
+      { "indexed": true, "internalType": "string", "name": "consumerCode", "type": "string" },
+      { "indexed": false, "internalType": "address", "name": "actor", "type": "address" },
+      { "indexed": false, "internalType": "uint256", "name": "timestamp", "type": "uint256" }
+    ],
+    "name": "SoldToConsumer",
+    "type": "event"
+  }
+]

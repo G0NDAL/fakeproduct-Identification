@@ -1,0 +1,116 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "C:\\Users\\USER\\Desktop\\janu\\fakeproduct-Identification\\blockchain\\contracts\\ProductRegistry.sol": {
+      "lastModificationDate": 1776242608707,
+      "contentHash": "2cf2ffb24d8ffdb81f674d23f4e4d65d",
+      "sourceName": "contracts/ProductRegistry.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "ProductRegistry"
+      ]
+    },
+    "C:\\Users\\USER\\Desktop\\janu\\fakeproduct-Identification\\blockchain\\contracts\\SupplyChain.sol": {
+      "lastModificationDate": 1776242608708,
+      "contentHash": "6cb91e8ef4c6c5e3244289d958c0a557",
+      "sourceName": "contracts/SupplyChain.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./ProductRegistry.sol",
+        "./SellerRegistry.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "SupplyChain"
+      ]
+    },
+    "C:\\Users\\USER\\Desktop\\janu\\fakeproduct-Identification\\blockchain\\contracts\\SellerRegistry.sol": {
+      "lastModificationDate": 1776242608707,
+      "contentHash": "760b86e1fc5e795bf95b8565cad58568",
+      "sourceName": "contracts/SellerRegistry.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "SellerRegistry"
+      ]
+    }
+  }
+}
