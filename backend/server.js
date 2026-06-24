@@ -6,7 +6,14 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors());
+app.use(cors({
+  origin: [
+    "http://localhost:5173", // for local testing
+    "https://fakeproduct-identification.vercel.app/" // your deployed frontend
+  ],
+  methods: ["GET", "POST"],
+  credentials: true
+}));
 app.use(express.json());
 
 // MySQL connection (FIXED)
