@@ -51,24 +51,43 @@ const ManufacturePage = ({ user, setUserState }) => {
       <div id="custom-cursor" aria-hidden="true"></div>
 
       {/* Navbar with brand left, profile right, aligned to main content */}
-      <nav className="flex items-center justify-between py-2 px-12" style={{ background: 'rgba(10,37,64,0.92)', borderBottom: '1.5px solid #00ffaa33', zIndex: 10, position: 'relative', minHeight: 56, maxWidth: '1168px', margin: '0 auto' }}>
+      <nav
+  className="flex items-center justify-between"
+  style={{
+    background: 'rgba(10,37,64,0.92)',
+    borderBottom: '1.5px solid #00ffaa33',
+    zIndex: 50,
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    width: '100%',
+    minHeight: 80,
+    padding: '0 48px',
+  }}
+>
         <div className="text-2xl font-bold text-[#00aaff]">BlockVerify</div>
         {/* Only show profile dropdown if user is logged in and not admin */}
         {(() => {
-          const loggedInUser = user || JSON.parse(localStorage.getItem('user') || 'null');
-          if (!loggedInUser) return null;
-          if (loggedInUser.admin_id || loggedInUser.user_role === 'admin') return null;
-          return (
-            <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-              <WalletConnect />
-              <ProfileDropdown user={loggedInUser} onLogout={() => { localStorage.removeItem('user'); setUserState && setUserState(null); window.location.hash = '/'; }} style={{ marginRight: 0 }} />
-            </div>
-          );
-        })()}
+  const loggedInUser = user || JSON.parse(localStorage.getItem('user') || 'null');
+  if (!loggedInUser) return null;
+  return (
+    <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginRight: '64px' }}>
+      <WalletConnect />
+      <ProfileDropdown
+        user={loggedInUser}
+        onLogout={() => {
+          localStorage.removeItem('user');
+          setUserState && setUserState(null);
+          window.location.hash = '/';
+        }}
+      />
+    </div>
+  );
+})()}
       </nav>
 
 
-      <main className="px-12 py-10">
+      <main className="px-12 py-10" style={{ marginTop: 80 }}>
         <button
           onClick={() => { window.location.hash = '/'; }}
           style={{
